@@ -1,0 +1,22 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "This is the lab3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baisenwang/comp2068-lab3.git"
+  },
+  "keywords": [
+    "lab3"
+  ],
+  "author": "Baisen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baisenwang/comp2068-lab3/issues"
+  },
+  "homepage": "https://github.com/baisenwang/comp2068-lab3#readme"
+}
