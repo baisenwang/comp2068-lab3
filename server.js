@@ -10,20 +10,25 @@ var app = connect();
  calculate number
  display formular
  */
-var calculate = function(req,res,next){
+var get = function(req,res,next){
 
     var qs = url.parse(req.url,true).query;
     var method = qs.method;
     var x = qs.x;
     var y = qs.y;
 
-    if(method == 'add')             res.end('Output: '+ x + ' + ' + y + ' = ' +(x*1+y*1));
-    else if(method == 'subtract')   res.end('Output: '+ x + ' - ' + y + ' = ' +(x-y));
-    else if(method == 'multiply')   res.end('Output: '+ x + ' * ' + y + ' = ' +(x*y));
-    else if(method == 'divide')     res.end('Output: '+ x + ' / ' + y + ' = ' +(x/y));
+    var calculate = function(method,x,y){
+        if(method == 'add')             res.end('Output: '+ x + ' + ' + y + ' = ' +(x*1+y*1));
+        else if(method == 'subtract')   res.end('Output: '+ x + ' - ' + y + ' = ' +(x-y));
+        else if(method == 'multiply')   res.end('Output: '+ x + ' * ' + y + ' = ' +(x*y));
+        else if(method == 'divide')     res.end('Output: '+ x + ' / ' + y + ' = ' +(x/y));
+        else res.end('Method should be  "add", "subtract", "multiply", or "divide"!');
+    }
+    calculate(method,x,y);
+
 }
 // call calculate function
-app.use(calculate);
+app.use(get);
 
 // put the port
 app.listen(3000);
